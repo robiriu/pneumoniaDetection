@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pneumonia Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <h1>Pneumonia Detection System</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload and Predict</button>
+    </form>
+    {% if result %}
+        <h2>Result: {{ result }}</h2>
+        <img src="{{ image }}" width="300px">
+    {% endif %}
+</body>
+</html>
